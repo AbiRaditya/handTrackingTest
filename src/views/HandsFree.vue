@@ -85,15 +85,55 @@
       <div class="bg-blue-500 rounded-lg py-6 p-3">
         {{ gestureBackward }}
         <div
-          class="grid overflow-x-auto"
-          style="display: flex; max-width: 1000px; overflow: auto"
+          style="
+            max-height: 500px;
+            overflow: auto;
+            scroll-snap-type: y mandatory;
+          "
         >
-          <div v-for="(text, index) in loopTest" :key="index">
+          <div
+            style="
+              background-color: white;
+              height: 300px;
+              margin: 100px;
+              scroll-snap-align: center;
+            "
+            v-for="(text, index) in loopTest"
+            :key="index"
+          >
             {{ text }}
           </div>
         </div>
+        <!-- <div class="snap-y snap-mandatory h-screen overflow-scroll">
+          <div
+            class="snap-start bg-amber-200 w-screen h-screen flex items-center justify-center text-8xl"
+          >
+            1
+          </div>
+          <div
+            class="snap-start bg-teal-200 w-screen h-screen flex items-center justify-center text-8xl"
+          >
+            2
+          </div>
+          <div
+            class="snap-start bg-cyan-200 w-screen h-screen flex items-center justify-center text-8xl"
+          >
+            3
+          </div>
+          <div
+            class="snap-start bg-fuchsia-200 w-screen h-screen flex items-center justify-center text-8xl"
+          >
+            4
+          </div>
+        </div> -->
       </div>
     </card>
+    <!-- <div class="container">
+      <section class="child"></section>
+      <section class="child"></section>
+      <section class="child"></section>
+      <p>...</p>
+    </div> -->
     <radial-progress-bar
       :diameter="200"
       :completed-steps="completedSteps"
@@ -164,10 +204,8 @@ export default {
     RadialProgressBar,
   },
   created() {
-    for (let i = 0; i < 1; i++) {
-      this.loopTest.push(
-        `index ke ${i} oaiwjdoiawjdoiawjdoawidjawoidjoawidjoawijdioawdjoawidjoawidjawoidjaowidjawoidjawoidjawoidjawoidjawoidjaowidjaowidjawoidjoawidawwijdwijdwijdiwjdwidjwi`
-      );
+    for (let i = 0; i < 100; i++) {
+      this.loopTest.push(`index ke ${i}`);
     }
   },
   mounted() {
@@ -1023,5 +1061,13 @@ export default {
   position: absolute;
   height: 500px;
   width: 500px;
+}
+.container {
+  background-color: red;
+  scroll-snap-type: y mandatory;
+}
+
+.child {
+  scroll-snap-align: center;
 }
 </style>

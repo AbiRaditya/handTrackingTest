@@ -6,6 +6,7 @@ import router from "./router";
 import store from "./store";
 import "./assets/tailwind.css";
 import "vue-good-table/dist/vue-good-table.css";
+import './assets/tailwind.css'
 // import EasyCamera from "easy-vue-camera";
 
 Vue.config.productionTip = false;
