@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+table > thead > tr > th {
+  padding: 10px;
+}
